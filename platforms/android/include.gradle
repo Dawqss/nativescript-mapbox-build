@@ -1,0 +1,33 @@
+repositories {
+    mavenCentral()
+}
+
+// see https://www.mapbox.com/android-sdk/
+dependencies {
+
+    // required for 'mapbox-android-sdk'
+    compile "com.mapbox.mapboxsdk:mapbox-android-gestures:0.2.0"
+    compile "com.mapbox.mapboxsdk:mapbox-android-telemetry:3.1.5"
+    compile "com.mapbox.mapboxsdk:mapbox-sdk-geojson:3.4.1"
+
+    implementation ('com.mapbox.mapboxsdk:mapbox-android-sdk:6.5.0'){
+        transitive=false
+    }
+
+    // service library
+    compile ('com.mapbox.mapboxsdk:mapbox-android-services:2.2.10@aar'){
+        transitive=true
+    }
+
+    // plugins
+    implementation ('com.mapbox.mapboxsdk:mapbox-android-plugin-locationlayer:0.10.0'){
+        transitive=false
+    }
+}
+
+android {
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
